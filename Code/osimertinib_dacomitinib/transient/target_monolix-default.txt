@@ -1,0 +1,71 @@
+<MODEL>
+DESCRIPTION:
+ System Units:
+                
+   mass          [=] nmoles
+   volume        [=] L
+   concentration [=] nM
+   time          [=] hour
+
+ #------------#
+ | Parameters |
+ #------------#
+
+ System parameters
+ Osimertinib
+name      	value       lower  upper    units   edit    grouping
+                       bound  bound
+
+
+PK:
+depot(adm=1, target=C1o, p=1e6/MWo/V1o)
+depot(adm=1, target=C2o, p=1e6/MWo/V2o)
+depot(adm=1, target=C2d, p=1e6/MWd/V2d)
+depot(adm=1, target=C3d, p=1e6/MWd/V3d)
+depot(adm=1, target=Ato, p=1e6/MWo)
+depot(adm=1, target=Atd, p=1e6/MWd)
+
+
+INPUT:
+input = {kao, CL1o, V1o, CL2o, V2o, MWo, kad, CLd, V2d, Qd, V3d, MWd}
+
+
+EQUATION:
+
+;-->Dynamic Secondary Parameters 
+SIMINT_TIME  = t 
+
+;-->ODEs 
+ddt_Ato    = (- kao*Ato)
+ddt_C1o    = (kao*Ato/V1o 		- CL1o*C1o/V1o)
+ddt_C2o    = (CL1o*C1o/V2o	 	- CL2o*C2o/V2o)
+ddt_Atd    = (- kad*Atd)
+ddt_C2d    = (kad*Atd/V2d 		- Qd*C2d/V2d)
+ddt_C3d    = (Qd*C2d/V3d 		- CLd*C3d/V3d)
+
+;-->Outputs 
+C_osi       = C1o
+C_osi_met   = C2o
+C_daco_c    = C2d
+C_daco_p    = C3d
+
+
+OUTPUT:
+output = {C_osi, C_osi_met, C_daco_c, C_daco_p} 
+
+;odeType = stiff
+
+POPULATION:
+pop_{kao}          = {distribution=logNormal, median=0.24,        variance=0.7921} 
+pop_{CL1o}         = {distribution=logNormal, median=11.76134,    variance=0.2116} 
+pop_{V1o}          = {distribution=logNormal, median=792.3074,    variance=0.2704} 
+pop_{CL2o}         = {distribution=logNormal, median=22.57583,    variance=0.2704} 
+pop_{V2o}          = {distribution=logNormal, median=207,         variance=0.3844} 
+pop_{MWo}          = {distribution=logNormal, median=500,         variance=0.1} 
+pop_{kad}          = {distribution=logNormal, median=0.067,       variance=1.466} 
+pop_{CLd}          = {distribution=logNormal, median=16.94379,    variance=0.103} 
+pop_{V2d}          = {distribution=logNormal, median=899.371,     variance=0.092} 
+pop_{Qd}           = {distribution=logNormal, median=17.32,       variance=0.025} 
+pop_{V3d}          = {distribution=logNormal, median=908.308,     variance=0.178} 
+pop_{MWd}          = {distribution=logNormal, median=469.945,     variance=0.1} 
+

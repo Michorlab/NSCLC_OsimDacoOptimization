@@ -1,0 +1,138 @@
+# System Units:
+#                
+#   mass          [=] nmoles
+#   volume        [=] L
+#   concentration [=] nM
+#   time          [=] hour
+#
+# #------------#
+# | Parameters |
+# #------------#
+#
+# System parameters
+# Osimertinib
+#name      	value       lower  upper    units   edit    grouping
+#                       bound  bound
+<P> kao    	0.24        eps     inf     1/hour  yes     System
+<P> CL1o   	11.76134        eps     inf     L/hour  yes     System
+<P> V1o    	792.3074          eps     inf     L       yes     System
+<P> CL2o 	22.57583        eps     inf     L/hour  yes     System
+<P> V2o		207         eps     inf     L       yes     System
+<P> MWo     500         eps     inf     kD      yes     System
+# Dacomitinib
+<P> kad		0.067		eps		inf 	1/hour 	yes 	System
+<P> CLd		16.94379		eps 	inf 	L/hour 	yes 	System
+<P> V2d 	899.371 	eps 	inf 	L 		yes 	System 
+<P> Qd 		17.32 		eps 	inf 	L/hour 	yes 	System
+<P> V3d 	908.308 	eps 	inf 	L 		yes 	System
+<P> MWd		469.945 	eps 	inf 	kD 		yes 	System
+
+
+# static secondary parameters
+#<As> kqo  = CL1o/V1o
+#<As> kelo = CL2o/V2o
+#<As> kqd1 = Qd/V2d
+#<As> kqd2 = Qd/V3d
+#<As> keld = CLd/V3d
+
+# #-------------------#
+# | Input Information |
+# #-------------------#
+#
+# 
+#
+#          1 g     1 mole   10^9 nmoles    1
+# X mg x ------- x ------ x ----------- x ---- => X*10^6/MW/V(L)
+#        10^3 mg     MW       1 mole      V(L)
+#
+# Bolus Events
+# times/events state   values       scale     	    units (before scale?)
+<B:times>; 				[ 0.0]; 	1;          	hour
+<B:events>; 	Ato; 	[80.0]; 	1e6/MWo;    	mg     
+<B:events>; 	Atd; 	[45.0]; 	1e6/MWd; 		mg
+<B:events>; 	C1o;	[ 0.0]; 	1e6/MWo/V1o; 	mg/L
+<B:events>; 	C2o;	[ 0.0]; 	1e6/MWo/V2o; 	mg/L
+<B:events>; 	C2d; 	[ 0.0]; 	1e6/MWd/V2d; 	mg/L
+<B:events>; 	C3d; 	[ 0.0]; 	1e6/MWd/V3d; 	mg/L
+
+# ODEs
+<ODE:Ato> 	- kao*Ato
+<ODE:C1o>     kao*Ato/V1o 		- CL1o*C1o/V1o
+<ODE:C2o>     CL1o*C1o/V2o	 	- CL2o*C2o/V2o
+<ODE:Atd> 	- kad*Atd
+<ODE:C2d>	  kad*Atd/V2d 		- Qd*C2d/V2d
+<ODE:C3d> 	  Qd*C2d/V3d 		- CLd*C3d/V3d
+                                                 
+# #---------#
+# | Outputs |
+# #---------#
+# Outputs that begin with QC will not be displayed in the GUI
+
+<O> C_osi 	= C1o
+<O> C_osi_met 	= C2o
+<O> C_daco_c 	= C2d
+<O> C_daco_p 	= C3d
+
+# #------------#
+# | Estimation |
+# #------------#
+
+## Interindividual Variability    
+# Osimertinib     
+
+<IIV:ETAkao> 		0.7921
+<IIV:ETAkao:LN>		kao
+
+<IIV:ETACL1o>    	0.2116        
+<IIV:ETACL1o:LN> 	CL1o           
+
+<IIV:ETAV1o>    	0.2704          
+<IIV:ETAV1o:LN> 	V1o
+
+<IIV:ETACL2o>		0.2704
+<IIV:ETACL2o:LN> 	CL2o 
+
+<IIV:ETAV2o>		0.3844       
+<IIV:ETAV2o:LN> 	V2o     
+
+<IIVCOR:ETACL1o:ETACL2o> 0.215280000
+
+# Dacomitinib
+
+<IIV:ETACLd> 		0.103
+<IIV:ETACLd:LN> 	CLd
+
+<IIV:ETAV2d> 		0.092
+<IIV:ETAV2d:LN> 	V2d
+
+<IIV:ETAkad> 		1.466
+<IIV:ETAkad:LN> 	kad
+
+<IIV:ETAQd> 		0.025
+<IIV:ETAQd:LN> 		Qd
+
+<IIV:ETAV3d> 		0.178
+<IIV:ETAV3d:LN> 	V3d
+
+<IIVCOR:ETACLd:ETAQd> 		0.035521120
+
+# Correlations between drugs. INPUT THE COVARIANCE, NOT CORRELATION!!!
+
+<IIVCOR:ETACL1o:ETACLd> 	0.01476306
+<IIVCOR:ETACL2o:ETAQd>		0.008221922
+
+<IIVCOR:ETAV1o:ETAV2d>		0.1340652
+<IIVCOR:ETAV2o:ETAV3d>		0.2223415
+
+# #---------#
+# | Options |
+# #---------#
+
+# General Options:
+# specify different time scales
+<TS:hour> 	1
+<TS:days> 	1/24
+<TS:weeks> 	1/168
+
+# <OPT:output_times> SIMINT_SEQ[0][672][1]
+

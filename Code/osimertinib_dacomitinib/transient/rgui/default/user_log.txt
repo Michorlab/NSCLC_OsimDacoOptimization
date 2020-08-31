@@ -1,0 +1,10 @@
+User specified y-limits: should be increasing (0, 0)
+User specified y-limits: should be increasing (0, 0)
+Bolus number: 2
+User specified y-limits: should be increasing (0, 0)
+Beginning simulations
+ -> type: stochastic  
+ -> number of subjects: 10
+ -> integrating with c-file
+Simulation complete (3.2340 seconds)
+User specified y-limits: should be increasing (0, 0)

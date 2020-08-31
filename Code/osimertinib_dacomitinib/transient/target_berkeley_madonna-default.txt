@@ -1,0 +1,62 @@
+; System Units:
+;                
+;   mass          [=] nmoles
+;   volume        [=] L
+;   concentration [=] nM
+;   time          [=] hour
+;
+; #------------#
+; | Parameters |
+; #------------#
+;
+; System parameters
+; Osimertinib
+;name      	value       lower  upper    units   edit    grouping
+;                       bound  bound
+METHOD Stiff
+RENAME TIME = SIMINT_TIME
+
+
+
+{INITIAL VALUES}
+INIT Ato          = 0.0 
+INIT C1o          = 0.0 
+INIT C2o          = 0.0 
+INIT Atd          = 0.0 
+INIT C2d          = 0.0 
+INIT C3d          = 0.0 
+
+
+
+{PARAMETERS}
+; parameters
+kao          = 0.24           ; 1/hour
+CL1o         = 11.76134       ; L/hour
+V1o          = 792.3074       ; L
+CL2o         = 22.57583       ; L/hour
+V2o          = 207            ; L
+MWo          = 500            ; kD
+kad          = 0.067          ; 1/hour
+CLd          = 16.94379       ; L/hour
+V2d          = 899.371        ; L
+Qd           = 17.32          ; L/hour
+V3d          = 908.308        ; L
+MWd          = 469.945        ; kD
+
+
+
+{DIFFERENTIAL EQUATIONS}
+d/dt(Ato)          = (- kao*Ato) 
+d/dt(C1o)          = (kao*Ato/V1o 		- CL1o*C1o/V1o) 
+d/dt(C2o)          = (CL1o*C1o/V2o	 	- CL2o*C2o/V2o) 
+d/dt(Atd)          = (- kad*Atd) 
+d/dt(C2d)          = (kad*Atd/V2d 		- Qd*C2d/V2d) 
+d/dt(C3d)          = (Qd*C2d/V3d 		- CLd*C3d/V3d) 
+
+
+
+{OUTPUTS}
+C_osi        = C1o
+C_osi_met    = C2o
+C_daco_c     = C2d
+C_daco_p     = C3d

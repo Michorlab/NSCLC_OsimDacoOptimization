@@ -1,0 +1,160 @@
+2019-10-21 10:55:57 Ubiquity log init - R
+2019-10-21 10:55:57 RGUI server.R startup
+2019-10-21 10:55:57 RGUI Found dynamic library attempting to load
+2019-10-21 10:55:57 RGUI Dynamic library seems to be loaded, setting
+2019-10-21 10:55:57 RGUI integration method to c-file
+2019-10-21 10:55:58 RGUI Initial simulation based on default information
+2019-10-21 10:55:58 RGUI Beginning simulation
+2019-10-21 10:55:58 RGUI  -> type: individual  
+2019-10-21 10:55:58 RGUI  -> integrating with c-file
+2019-10-21 10:55:58 RGUI Simulation complete (0.1710 seconds)
+2019-10-21 10:55:58 RGUI table_parameters touched
+2019-10-21 10:55:58 RGUI table_iiv touched
+2019-10-21 10:55:58 RGUI table_covariates touched
+2019-10-21 10:55:58 RGUI Simulation status set: Fresh
+2019-10-21 10:55:59 RGUI Simulation status set: Fresh
+2019-10-21 10:55:59 RGUI Parameter set: default
+2019-10-21 10:55:59 RGUI table_parameters touched
+2019-10-21 10:55:59 RGUI Simulation status set: Fresh
+2019-10-21 10:56:09 RGUI table_iiv touched
+2019-10-21 10:56:09 RGUI Simulation status set: Fresh
+2019-10-21 10:56:26 RGUI Simulation status set: Fresh
+2019-10-21 10:56:33 RGUI Simulation status set: Fresh
+2019-10-21 10:56:34 RGUI Bolus frequency: 2
+2019-10-21 10:56:34 RGUI Stale: text_bolus_frequency
+2019-10-21 10:56:34 RGUI Simulation status set: Stale
+2019-10-21 10:56:47 RGUI Simulation status set: Stale
+2019-10-21 10:56:50 RGUI Repeat doses: TRUE
+2019-10-21 10:56:50 RGUI Stale: check_repeatdoses
+2019-10-21 10:56:50 RGUI Simulation status set: Stale
+2019-10-21 10:56:57 RGUI Simulation status set: Stale
+2019-10-21 10:56:57 RGUI Beginning simulation
+2019-10-21 10:56:57 RGUI  -> type: individual  
+2019-10-21 10:56:57 RGUI  -> integrating with c-file
+2019-10-21 10:56:57 RGUI Simulation complete (0.0320 seconds)
+2019-10-21 10:56:58 RGUI Simulation status set: Fresh
+2019-10-21 10:57:07 RGUI Simulate with variability: TRUE
+2019-10-21 10:57:07 RGUI Stale: check_variability
+2019-10-21 10:57:07 RGUI Simulation status set: Stale
+2019-10-21 10:57:14 RGUI Beginning simulations
+2019-10-21 10:57:14 RGUI  -> type: stochastic  
+2019-10-21 10:57:14 RGUI  -> number of subjects: 10
+2019-10-21 10:57:14 RGUI  -> integrating with c-file
+2019-10-21 10:57:14 Simulating multiple subjects (10)
+2019-10-21 10:57:14 Integrating with:            c-file 
+2019-10-21 10:57:14 Parallel set to:             No 
+2019-10-21 10:57:14 Number of cores:             1 
+2019-10-21 10:57:14 Generating the parameters for subjects.
+2019-10-21 10:57:14 Be patient, there may be a delay...
+2019-10-21 10:57:14 Now running the simulations
+2019-10-21 10:57:17 RGUI Simulation complete (2.9150 seconds)
+2019-10-21 10:57:17 RGUI Simulation status set: Fresh
+2019-10-21 10:57:19 RGUI Simulation status set: Fresh
+2019-10-21 12:19:47 RGUI Bolus frequency: 24
+2019-10-21 12:19:47 RGUI Stale: text_bolus_frequency
+2019-10-21 12:19:47 RGUI Simulation status set: Stale
+2019-10-21 12:19:50 RGUI Simulation status set: Stale
+2019-10-21 12:19:50 RGUI Bolus number: 5
+2019-10-21 12:19:50 RGUI Stale: text_bolus_number
+2019-10-21 12:19:50 RGUI Simulation status set: Stale
+2019-10-21 12:19:52 RGUI Beginning simulations
+2019-10-21 12:19:52 RGUI  -> type: stochastic  
+2019-10-21 12:19:52 RGUI  -> number of subjects: 10
+2019-10-21 12:19:52 RGUI  -> integrating with c-file
+2019-10-21 12:19:52 Simulating multiple subjects (10)
+2019-10-21 12:19:52 Integrating with:            c-file 
+2019-10-21 12:19:52 Parallel set to:             No 
+2019-10-21 12:19:52 Number of cores:             1 
+2019-10-21 12:19:52 Generating the parameters for subjects.
+2019-10-21 12:19:52 Be patient, there may be a delay...
+2019-10-21 12:19:52 Now running the simulations
+2019-10-21 12:19:55 RGUI Simulation complete (3.1010 seconds)
+2019-10-21 12:19:55 RGUI Simulation status set: Fresh
+2019-10-21 12:19:55 RGUI Simulation status set: Fresh
+2019-10-21 12:20:29 RGUI Number of doses into Atd (1) and dosing times (3) are not the same
+2019-10-21 12:20:29 RGUI Number of doses into C3d (1) and dosing times (3) are not the same
+2019-10-21 12:20:29 RGUI Number of doses into Ato (1) and dosing times (3) are not the same
+2019-10-21 12:20:29 RGUI Number of doses into C2d (1) and dosing times (3) are not the same
+2019-10-21 12:20:29 RGUI Number of doses into C1o (1) and dosing times (3) are not the same
+2019-10-21 12:20:29 RGUI Number of doses into C2o (1) and dosing times (3) are not the same
+2019-10-21 12:20:29 RGUI Bolus injections not set.
+2019-10-21 12:20:29 RGUI Simulation status set: Fresh
+2019-10-21 12:20:35 RGUI Simulation status set: Fresh
+2019-10-21 12:20:40 RGUI Bolus number: 0
+2019-10-21 12:20:40 RGUI Stale: text_bolus_number
+2019-10-21 12:20:40 RGUI Simulation status set: Stale
+2019-10-21 12:20:40 RGUI Simulation status set: Stale
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 system_set_bolus()                  
+2019-10-21 12:20:41 Something went wrong and the bolus, 
+2019-10-21 12:20:41 was not set:
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 system_set_bolus()                  
+2019-10-21 12:20:41 Something went wrong and the bolus, 
+2019-10-21 12:20:41 was not set:
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 system_set_bolus()                  
+2019-10-21 12:20:41 Something went wrong and the bolus, 
+2019-10-21 12:20:41 was not set:
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 system_set_bolus()                  
+2019-10-21 12:20:41 Something went wrong and the bolus, 
+2019-10-21 12:20:41 was not set:
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 system_set_bolus()                  
+2019-10-21 12:20:41 Something went wrong and the bolus, 
+2019-10-21 12:20:41 was not set:
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 system_set_bolus()                  
+2019-10-21 12:20:41 Something went wrong and the bolus, 
+2019-10-21 12:20:41 was not set:
+2019-10-21 12:20:41 ------------------------------------
+2019-10-21 12:20:41 RGUI Beginning simulations
+2019-10-21 12:20:41 RGUI  -> type: stochastic  
+2019-10-21 12:20:41 RGUI  -> number of subjects: 10
+2019-10-21 12:20:41 RGUI  -> integrating with c-file
+2019-10-21 12:20:41 Simulating multiple subjects (10)
+2019-10-21 12:20:41 Integrating with:            c-file 
+2019-10-21 12:20:41 Parallel set to:             No 
+2019-10-21 12:20:41 Number of cores:             1 
+2019-10-21 12:20:41 Generating the parameters for subjects.
+2019-10-21 12:20:41 Be patient, there may be a delay...
+2019-10-21 12:20:41 Now running the simulations
+2019-10-21 12:20:44 RGUI Simulation complete (3.1230 seconds)
+2019-10-21 12:20:44 RGUI Simulation status set: Fresh
+2019-10-21 12:20:45 RGUI User specified y-limits: should be increasing (0, 0)
+2019-10-21 12:20:45 RGUI Simulation status set: Fresh
+2019-10-21 12:20:49 RGUI Bolus number: 1
+2019-10-21 12:20:49 RGUI Stale: text_bolus_number
+2019-10-21 12:20:49 RGUI User specified y-limits: should be increasing (0, 0)
+2019-10-21 12:20:49 RGUI Simulation status set: Stale
+2019-10-21 12:20:52 RGUI Bolus frequency: 5
+2019-10-21 12:20:52 RGUI Stale: text_bolus_frequency
+2019-10-21 12:20:52 RGUI User specified y-limits: should be increasing (0, 0)
+2019-10-21 12:20:52 RGUI Simulation status set: Stale
+2019-10-21 12:20:55 RGUI User specified y-limits: should be increasing (0, 0)
+2019-10-21 12:20:55 RGUI Simulation status set: Stale
+2019-10-21 12:20:55 RGUI Bolus number: 2
+2019-10-21 12:20:55 RGUI Stale: text_bolus_number
+2019-10-21 12:20:55 RGUI User specified y-limits: should be increasing (0, 0)
+2019-10-21 12:20:55 RGUI Simulation status set: Stale
+2019-10-21 12:20:57 RGUI Beginning simulations
+2019-10-21 12:20:57 RGUI  -> type: stochastic  
+2019-10-21 12:20:57 RGUI  -> number of subjects: 10
+2019-10-21 12:20:57 RGUI  -> integrating with c-file
+2019-10-21 12:20:57 Simulating multiple subjects (10)
+2019-10-21 12:20:57 Integrating with:            c-file 
+2019-10-21 12:20:57 Parallel set to:             No 
+2019-10-21 12:20:57 Number of cores:             1 
+2019-10-21 12:20:57 Generating the parameters for subjects.
+2019-10-21 12:20:57 Be patient, there may be a delay...
+2019-10-21 12:20:57 Now running the simulations
+2019-10-21 12:21:00 RGUI Simulation complete (3.2340 seconds)
+2019-10-21 12:21:00 RGUI User specified y-limits: should be increasing (0, 0)
+2019-10-21 12:21:00 RGUI Simulation status set: Fresh
+2019-10-21 12:21:00 RGUI Simulation status set: Fresh
