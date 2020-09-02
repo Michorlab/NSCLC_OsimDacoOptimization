@@ -26,7 +26,7 @@ Instructions to obtain drug concentrations over time:
 2. Open analysis_multiple.r to set doses, frequency of doses, sample size, (in lines 37-60) and execute.
 3. Save drug concentrations of two compartments and individual PK parameters.
 
-Speed of simulations depends on sample size and frequency of observations per simulated patient. I simulated 1000 patients up to 8 weeks or 1 year under many different drug-combo schedules. For the results, see [Drug concentrations](#drug-concentrations) below.
+Speed of simulations depends on sample size and frequency of observations per simulated patient. I simulated 1000 patients up to 8 weeks or 1 year under many different drug-combo schedules. The output files exceed 100 Mb and are not compatible with GitHub. I can share these via another method. 
 
 #### *In silico* clinical trials
 
@@ -43,6 +43,3 @@ All data from validation experiments can be found in `Validation data/`. Experim
 
 ### Results
 Results of *in silico* trials can be found in directories named `Results_*`. The folder `Results_102719` is a 2 cycle treatment trial (with different drug correlation PK parameters). The folder `Results_200520` corresponds to the same trial but for substantially heavier patients. Lastly, the folder `Results_121119` contains *in silico* one-year trials (with no treatment breaks).
-
-### Drug concentrations
-As mentioned above, the drug concentrations were simulated using [Ubiquity](https://link.springer.com/article/10.1007/s10928-014-9352-6). The output files exceed 100 Mb and are not compatible with GitHub. Please contact me so I can share them via another program. 
