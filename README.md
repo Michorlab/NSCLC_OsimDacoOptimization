@@ -26,7 +26,7 @@ Instructions to obtain drug concentrations over time:
 2. Open analysis_multiple.r to set doses, frequency of doses, sample size, (in lines 37-60) and execute.
 3. Save drug concentrations of two compartments and individual PK parameters.
 
-Speed of simulations depends on sample size and frequency of observations per simulated patient. I simulated 1000 patients up to 8 weeks or 1 year under many different drug-combo schedules. For the results, see [below](#drug-concentrations).
+Speed of simulations depends on sample size and frequency of observations per simulated patient. I simulated 1000 patients up to 8 weeks or 1 year under many different drug-combo schedules. For the results, see [Drug concentrations](#drug-concentrations) below.
 
 #### *In silico* clinical trials
 
@@ -37,7 +37,9 @@ In `estimateRelativeImprovement.R`, we estimate the relative improvement of prop
 
 #### Validation experiments
 
-`Code/calculateSteadyState.R`
+`Code/calculateSteadyState.R` estimates an average concentration of drugs at steady state for patients. This was done to identify drug concentrations that would be used in *in vitro* validation experiments. 
+
+All data from validation experiments can be found in `Validation data/`. Experiments finished on different dates, which is reflected in the dating of the folders and files. All scripts in `Code/ValidationExperiments_200827/` simulate cell counts under various combinations of drug concentrations (using [ESTIpop](https://github.com/Michorlab/estipop)) and results are ploted in `plotValidationExperiments.R`. 
 
 ### Results
 Results of *in silico* trials can be found in directories named `Results_*`. The folder `Results_102719` is a 2 cycle treatment trial (with different drug correlation PK parameters). The folder `Results_200520` corresponds to the same trial but for substantially heavier patients. Lastly, the folder `Results_121119` contains *in silico* one-year trials (with no treatment breaks).
