@@ -26,11 +26,11 @@ Instructions to obtain drug concentrations over time:
 2. Open analysis_multiple.r to set doses, frequency of doses, sample size, (in lines 37-60) and execute.
 3. Save drug concentrations of two compartments and individual PK parameters.
 
-Speed of simulations depends on sample size and frequency of observations per simulated patient. I simulated 1000 patients up to 8 weeks or 1 year under many different drug-combo schedules. For the results, see [below](### Drug concentrations).
+Speed of simulations depends on sample size and frequency of observations per simulated patient. I simulated 1000 patients up to 8 weeks or 1 year under many different drug-combo schedules. For the results, see [below](#drug-concentrations).
 
 #### *In silico* clinical trials
 
-I uploaded `Code/Cannon/Code` to Cannon (at the time called Odyssey) along with the simulated drug concentrations. For each population of patients, we simulated a total of 7 dosing regimens (we actually simulated many other schedules but these 7 are presented in the manuscrip). The traditional regimens are titled `run_group1.*.R`, and the proposed are `run_group2.*.R`. The script `predictCount_ubiquity.R` is called in the other scripts to estimate the expected number of tumors cells at the end of treatment; code is written to read Ubiquity output. Shell script `batchArray.sh` runs all scripts in Odyssey using an [array mode](https://docs.rc.fas.harvard.edu/kb/running-jobs/#Job_arrays). [Results](### Results) presented in manuscript are in repository.
+I uploaded `Code/Cannon/Code` to Cannon (at the time called Odyssey) along with the simulated drug concentrations. For each population of patients, we simulated a total of 7 dosing regimens (we actually simulated many other schedules but these 7 are presented in the manuscrip). The traditional regimens are titled `run_group1.*.R`, and the proposed are `run_group2.*.R`. The script `predictCount_ubiquity.R` is called in the other scripts to estimate the expected number of tumors cells at the end of treatment; code is written to read Ubiquity output. Shell script `batchArray.sh` runs all scripts in Odyssey using an [array mode](https://docs.rc.fas.harvard.edu/kb/running-jobs/#Job_arrays). [Results](#results) presented in manuscript are in repository.
 
 In `estimateRelativeImprovement.R`, we estimate the relative improvement of proposed schedule over traditional schedule using the same metric as in Chakrabarti and Michor, *Cancer Research* 2017. We use a random forest to estimate importance of PK profiles and pre-existence of resistant clones in respect to improvement, `improvement_randomForest.R`. 
 
