@@ -4,8 +4,8 @@
 #   dacomitinib and osimertinib. This cell line is from Aaron Hata's lab.
 #####
 
+library(tidyverse)
 library(reshape2)
-library(ggplot2)
 library(scales)
 
 #### Day 1 of PC9
