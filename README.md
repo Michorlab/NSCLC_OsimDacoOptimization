@@ -37,7 +37,7 @@ In `estimateRelativeImprovement.R`, we estimate the relative improvement of prop
 
 #### Validation experiments
 
-`Code/calculateSteadyState.R` estimates an average concentration of drugs at steady state for patients. This was done to identify drug concentrations that would be used in *in vitro* validation experiments. 
+`Code/calculateSteadyState.R` estimates an average concentration of drugs at steady state for  simulated patients. The input is an RData file containing 3-4 outputs from Ubiquity, which I can share upon request. This was done to identify drug concentrations that would be used in the *in vitro* validation experiments. 
 
 All data from validation experiments can be found in `Validation data/`. Experiments finished on different dates, which is reflected in the dating of the folders and files. All scripts in `Code/ValidationExperiments_200827/` simulate cell counts under various combinations of drug concentrations (using [ESTIpop](https://github.com/Michorlab/estipop)) and results are ploted in `plotValidationExperiments.R`. 
 
