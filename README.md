@@ -15,9 +15,9 @@ The collection of scripts in this repository were composed and tested using R ve
 
 The dosing schedules explored in the manuscript yield large files. To simplicy the reproducibility of our model, we simulated two demo files with the following characteristics:
 
-	- 10 patients with same clinical characteristics
-	- 1 week of treatment
-	- Schedule 1: 80 mg Osimertinib QD; schedule 2: 80 mg Osimertinib QD + 40 mg Dacomitinib QD
+- 10 patients with same clinical characteristics
+- 1 week of treatment
+- Schedule 1: 80 mg Osimertinib QD; schedule 2: 80 mg Osimertinib QD + 40 mg Dacomitinib QD
 
 These files are found in `Demo/Concentrations_demo/exampleConcentrations.RData`. When loading into R, two objects in a list format should appear in the work environmnet. Each object is a simulation of drug concentrations in plasma and PK parameters of two drugs in 10 patients and consists of 5 elements. The drug-concentration values used in the *in silico* trial is under the element "Outputs" with vectors named "C_osi" and "C_daco_c".
 
