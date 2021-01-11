@@ -1,6 +1,31 @@
 # Osimertinib and Dacomitinib Combination Schedule Optimization in EGFR-m NSCLC
+## First Author: Kamrine Poels
+## Corresponding Author: Franziska Michor
+## Institution: Dana Farber Cancer Institute
 
-Updated: 09/01/20
+README last updated: 01/11/21
+
+## System Requirements
+
+The collection of scripts in this repository were composed and tested using R version 3.5.0 or newer. R package dependencies are: `tidyverse`, `pracma`, `xtable`, `reshape`, `nlme`, `reshape2`, `ggpubr`, `scatterplot3d`, `randomForest`.
+
+[Ubiquity](https://link.springer.com/article/10.1007/s10928-014-9352-6) (Harrold J.M. and Abraham A.K *J Pharmacokinet Pharmacodyn* 2014) dependencies include: `deSolve`, `foreach`, `doParallel`, `doRNG`. Supplementary data includes download instructions and demos. 
+
+## Demo
+
+The dosing schedules explored in the manuscript yield large files. To simplicy the reproducibility of our model, we simulated two demo files with the following characteristics:
+
+	- 10 patients with same clinical characteristics
+	- 1 week of treatment
+	- Schedule 1: 80 mg Osimertinib QD; schedule 2: 80 mg Osimertinib QD + 40 mg Dacomitinib QD
+
+These files are found in `Demo/Concentrations_demo/exampleConcentrations.RData`. When loading into R, two objects in a list format should appear in the work environmnet. Each object is a simulation of drug concentrations in plasma and PK parameters of two drugs in 10 patients and consists of 5 elements. The drug-concentration values used in the *in silico* trial is under the element "Outputs" with vectors named "C_osi" and "C_daco_c".
+
+We can obtain expected cell counts for these 10 subjects under each schedule by running `Demo/Code_demo/run_demo.R`. Output should be a 2 data frames, each with 10 observations an 4 variables. Rows are the expected cell counts of each individual at the end of one-week treatment and each column is a cell type. The output is saved in the `Results_Demo` folder. The script should take 5 to 10 seconds to run on a typical computer.
+
+In order to compare the performance of these two schedules, one can run the script `estimateRelativeImprovement.R`. The script will take the expected cell counts from the output that was saved in the `Results_Demo`. If run with default settings, it saves a waterfall plot titled `demoWaterplot.pdf`, showing the distribution of the relative improvement of demo schedule 2 over demo schedule 1 by patient. If there is one more comparison of interest or user would like to use different input, the script must be edited (locations are pointed out in the script's comments).
+
+![Relative Improvement of schedule 2 over schedule 1](Demo/demoWaterplot.pdf)
 
 ## Description of repository
 
