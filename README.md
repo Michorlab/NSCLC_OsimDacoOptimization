@@ -25,7 +25,7 @@ We can obtain expected cell counts for these 10 subjects under each schedule by 
 
 In order to compare the performance of these two schedules, one can run the script `estimateRelativeImprovement.R`. The script will take the expected cell counts from the output that was saved in the `Results_Demo`. If run with default settings, it saves a waterfall plot titled `demoWaterplot.pdf`, showing the distribution of the relative improvement of demo schedule 2 over demo schedule 1 by patient. If there is one more comparison of interest or user would like to use different input, the script must be edited (locations are pointed out in the script's comments).
 
-![Relative Improvement of schedule 2 over schedule 1](Demo/demoWaterplot.png)
+![Relative Improvement of schedule 2 over schedule 1](Demo/demoWaterplot.png | width=100)
 
 ## Description of repository
 
