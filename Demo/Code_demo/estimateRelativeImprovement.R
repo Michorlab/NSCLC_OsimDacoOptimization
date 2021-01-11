@@ -35,13 +35,13 @@ comps %>%
   ggplot(aes(x = id, y = improvement)) +
   geom_bar(position = position_dodge(width = .5), stat = "identity", show.legend = F,
            fill = "grey45") +
-  scale_y_continuous(name = "Relative Improvement After 1 year of Treatment", labels = scales::percent_format(accuracy = 1)) +
+  scale_y_continuous(name = "Relative Improvement (DEMO)", labels = scales::percent_format(accuracy = 1)) +
   ### Uncomment following line when comps has more than 1 comparison
   # facet_grid(sched~.)+
   theme_bw(base_size = 15) +
   theme(legend.position = "bottom", axis.title.x=element_blank(), axis.text.x=element_blank(),
         axis.ticks.x=element_blank())
-ggsave("../demoWaterplot.pdf", width = 5, height = 5)
+ggsave("../demoWaterplot.pdf", width = 5, height = 3)
 
 
 ##################################################
